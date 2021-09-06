@@ -42,7 +42,7 @@ function doLogin()
 				}
 
 				firstName = jsonObject.firstName;
-				lastName = jsonObject.LastName;
+				lastName = jsonObject.lastName;
 
 				saveCookie();
 
@@ -75,11 +75,11 @@ function readCookie()
 	{
 		var thisOne = splits[i].trim();
 		var tokens = thisOne.split("=");
-		if( tokens[0] == "FirstName" )
+		if( tokens[0] == "firstName" )
 		{
 			firstName = tokens[1];
 		}
-		else if( tokens[0] == "LastName" )
+		else if( tokens[0] == "lastName" )
 		{
 			lastName = tokens[1];
 		}
