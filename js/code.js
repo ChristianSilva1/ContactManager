@@ -1,4 +1,4 @@
-var urlBase = 'http://group15apps.com';
+var urlBase = 'http://group15apps.com/LAMPAPI';
 var extension = 'php';
 
 var userId = 0;
@@ -7,9 +7,9 @@ var lastName = "";
 
 function doLogin()
 {
-	//userId = 0;
-	//firstName = "";
-	//lastName = "";
+	userId = 0;
+	firstName = "";
+	lastName = "";
 
 	var login = document.getElementById("loginName").value;
 	var password = document.getElementById("loginPassword").value;
@@ -21,7 +21,7 @@ function doLogin()
 //	var tmp = {login:login,password:hash};
 	var jsonPayload = JSON.stringify( tmp );
 
-	var url = urlBase + '/LAMPAPI/Login.' + extension;
+	var url = urlBase + '/Login.' + extension;
 
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
