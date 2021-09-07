@@ -17,7 +17,7 @@ function doLogin()
 
 	document.getElementById("loginResult").innerHTML = "";
 
-	var tmp = {Login:login,Password:password};
+	var tmp = {login:login,password:password};
 //	var tmp = {login:login,password:hash};
 	var jsonPayload = JSON.stringify( tmp );
 
