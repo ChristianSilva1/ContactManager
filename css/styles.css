@@ -22,6 +22,15 @@ body
     background-color: #FFF8DC;
 }
 
+#signUpDiv
+{
+    font-size: 30px;
+    width: 70%;
+    margin-left: 15%;
+    padding: 25px;
+    background-color: #FFF8DC;
+}
+
 #loggedInDiv
 {
     font-size: 30px;
@@ -63,6 +72,14 @@ body
 {
 	font-size: 30px;
 }
+#signUpName
+{
+	font-size: 30px;
+}
+#signUpPassword
+{
+	font-size: 30px;
+}
 #searchText
 {
 	font-size: 30px;
@@ -81,7 +98,8 @@ input[type="text"],input[type="password"]{
     font-family: 'Ubuntu', sans-serif;
 }
 
-#inner-title{
+#inner-title
+{
     display: inline-block;
     font-size: 0.8em;
     width: 90%;
@@ -92,6 +110,29 @@ input[type="text"],input[type="password"]{
     color: #000000;
 }
 
+#userNameLabel
+{
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family: Times New Roman, sans-serif;
+    color: #000000;
+  }
+
+#passwordLabel
+{
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family: Times New Roman, sans-serif;
+    color: #000000;
+}
 #loginResult{
     display: inline-block;
     font-size: 0.8em;
