@@ -1,4 +1,4 @@
-var urlBase = 'http://group15apps.com/LAMPAPI';
+var urlBase = 'http://group15apps.xyz/LAMPAPI';
 var extension = 'php';
 
 var userId = 0;
