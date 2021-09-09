@@ -6,7 +6,7 @@ $inData = getRequestInfo();
 	$lastName = "";
     
     // Connect with database with paramaters (host, username, password, database) and store the connection in var 'conn'
-	$conn = new mysqli("localhost", "group15", "group15!!", "COP4331"); 
+	$conn = new mysqli("localhost", "group15", "group15!!", "contact_manager"); 
     
     // If statement to make sure connection was successful
 	if( $conn->connect_error )
