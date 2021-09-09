@@ -58,6 +58,63 @@ function doLogin()
 
 }
 
+function doSignUp()
+{
+	//Set this back to 0
+	userId = 0;
+	//Initialize vars to input in signup.html
+	firstName = document.getElementById("signUpFirstName").value;
+	lastName = document.getElementById("signUpLastName").value;
+	//Declare and initialize username and password from input
+	var userName = document.getElementById("signUpName").value;
+	var password1 = document.getElementById("signUpPassword1").value;
+	var password2 = document.getElementById("signUpPassword2").value;
+
+	document.getElementById("signUpResult").innerHTML = "";
+
+	try {
+		//Checks that passwords match
+		if (password1 !== password2)
+		{
+			document.getElementById("loginResult").innerHTML = "Passwords do not match!";
+			return;
+		}
+		else
+		{
+			var password = password1;
+			//API Vocab Class
+			var tmp = {firstname:firstName, lastname:lastName, login:userName, password:password};
+			var jsonPayload = JSON.stringify( tmp );
+			//URL for Register.php
+			var url = urlBase + '/Register.' + extension;
+			//Server Request
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", url, true);
+			xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+			xhr.onreadystatechange = function()
+			{
+				if (this.readyState == 4 && this.status == 200) {
+					var jsonObject = JSON.parse( JSON.stringify( xhr.responseText) );
+
+					userId = jsonObject.id;
+					firstName = jsonObject.firstName;
+					lastName = jsonObject.lastName;
+
+					saveCookie();
+					//Back to index
+					window.location.href = "index.html";
+				}
+			};
+
+			xhr.send(jsonPayload);
+
+	} catch (err) {
+		//Error Notice
+		document.getElementById("loginResult").innerHTML = err.message;
+	}
+}
+
 function saveCookie()
 {
 	var minutes = 20;

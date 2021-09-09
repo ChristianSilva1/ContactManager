@@ -13,14 +13,13 @@
 <body>
   <h1 id="title">CREATE AN USER</h1>
   <div id="signUpDiv">
-    <span id="userNameLabel">ENTER AN USERNAME</span>
+    <input type="text" id="signUpFirstName" placeholder="First Name"/><br />
+    <input type="text" id="signUpLastName" placeholder="Last Name"/><br />
     <input type="text" id="signUpName" placeholder="Username"/><br />
-    <span id="passwordLabel">ENTER A PASSWORD</span>
-    <input type="password" id="signUpPassword" placeholder="Password"/><br />
-    <span id="passwordLabel">CONFIRM YOUR PASSWORD</span>
-    <input type="password" id="signUpPassword" placeholder="Password"/><br />
-    <button type="button" id="signUpButton" class="buttons" onclick="doSignUp();"> Sign up! </button>
+    <input type="password" id="signUpPassword1" placeholder="Password"/><br />
+    <input type="password" id="signUpPassword2" placeholder="Repeat Password"/><br />
     <span id="signUpResult"></span>
+    <button type="button" id="signUpButton" class="buttons" onclick="doSignUp();"> Sign up! </button>
   </div>
 </body>
 </html>
