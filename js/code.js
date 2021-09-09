@@ -32,7 +32,7 @@ function doLogin()
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-				var jsonObject = JSON.parse( JSON.stringify( xhr.responseText) );
+				var jsonObject = JSON.parse(xhr.responseText);
 				userId = jsonObject.id;
 
 				if( userId < 1 )
@@ -95,7 +95,7 @@ function doSignUp()
 			xhr.onreadystatechange = function()
 			{
 				if (this.readyState == 4 && this.status == 200) {
-					var jsonObject = JSON.parse( JSON.stringify( xhr.responseText) );
+					var jsonObject = JSON.parse(xhr.responseText);
 
 					userId = jsonObject.id;
 					firstName = jsonObject.firstName;
