@@ -10,7 +10,7 @@
 	{
 		readCookie();
 	}, false);
-	</script>
+</script>
 
 </head>
 <body>
@@ -31,10 +31,15 @@
 	<p id="colorList">
 	</p><br /><br />
 
-	<input type="text" id="colorText" placeholder="Color To Add">
-	<button type="button" id="addColorButton" class="buttons" onclick="addColor();"> Add Contact </button><br />
-	<span id="colorAddResult"></span>
+
+	<input type="text" class = "input_fields" id="NewContactFirst" placeholder="First Name">
+		<input type="text" class = "input_fields" id="NewContactLast" placeholder="Last Name">
+			<input type="text" class = "input_fields" id="NewContactEmail" placeholder="Email">
+				<input maxLength = "30" type="Text" class = "input_fields" id="NewContactPhone" placeholder="PhoneNumber">
+	<button type="button" id="addContactButton" class="mangeButtons" onclick="addContact();"> Add Contact </button><br />
+	<span id="contactAddResult"></span>
 </div>
 
 </body>
 </html>
+
