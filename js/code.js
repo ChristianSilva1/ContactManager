@@ -72,26 +72,26 @@ function doSignUp()
 
 	document.getElementById("signUpResult").innerHTML = "";
 
-	try {
-		//Checks that passwords match
-		if (password1 !== password2)
-		{
-			document.getElementById("loginResult").innerHTML = "Passwords do not match!";
-			return;
-		}
-		else
-		{
-			var password = password1;
-			//API Vocab Class
-			var tmp = {firstname:firstName, lastname:lastName, login:userName, password:password};
-			var jsonPayload = JSON.stringify( tmp );
-			//URL for Register.php
-			var url = urlBase + '/Register.' + extension;
-			//Server Request
-			var xhr = new XMLHttpRequest();
-			xhr.open("POST", url, true);
-			xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
+	if (password1 !== password2)
+	{
+		document.getElementById("loginResult").innerHTML = "Passwords do not match!";
+		return;
+	}
+
+	var password = password1;
+	//API Vocab Class
+	var tmp = {firstname:firstName, lastname:lastName, login:userName, password:password};
+	var jsonPayload = JSON.stringify( tmp );
+	//URL for Register.php
+	var url = urlBase + '/Register.' + extension;
+	//Server Request
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+
+	try {
 			xhr.onreadystatechange = function()
 			{
 				if (this.readyState == 4 && this.status == 200) {
@@ -103,7 +103,7 @@ function doSignUp()
 
 					saveCookie();
 					//Back to index
-					window.location.href = "index.html";
+					window.location.href = "http://group15apps.xyz";
 				}
 			};
 
@@ -165,15 +165,19 @@ function doLogout()
 	window.location.href = "index.html";
 }
 
-function addColor()
+function addContact()
 {
-	var newColor = document.getElementById("colorText").value;
-	document.getElementById("colorAddResult").innerHTML = "";
+	var contactFirst = document.getElementById("NewContactFirst").value;
+	var contactLast = document.getElementById("NewContactLast").value;
+	var contactEmail = document.getElementById("NewContactEmail").value;
+	var contactPhone = document.getElementById("NewContactPhone").value;
 
-	var tmp = {color:newColor,userId,userId};
+	document.getElementById("contactAddResult").innerHTML = "";
+
+	var tmp = {First:contactFirst,Last:contactLast,Email:contactEmail,Phone:contactPhone, userId,userId};
 	var jsonPayload = JSON.stringify( tmp );
 
-	var url = urlBase + '/AddColor.' + extension;
+	var url = urlBase + '/AddContact.' + extension;
 
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -184,14 +188,14 @@ function addColor()
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-				document.getElementById("colorAddResult").innerHTML = "Color has been added";
+				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		document.getElementById("colorAddResult").innerHTML = err.message;
+		document.getElementById("contactAddResult").innerHTML = err.message;
 	}
 
 }
