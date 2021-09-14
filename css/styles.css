@@ -29,6 +29,7 @@ html, body, div {
     text-align: center;
     font-family: 'Caveat', 'sans-serif';
     color: #000;
+    
 }
 
 #loginDiv
@@ -48,7 +49,7 @@ html, body, div {
     width: 70%;
     margin-left: 15%;
     padding: 25px;
-    background-color: #FFF8DC;
+    
 }
 
 #loggedInDiv
@@ -57,7 +58,7 @@ html, body, div {
     width: 70%;
     margin-left: 15%;
     padding: 25px;
-    background-color: #F0FFFF;
+    
 }
 
 #accessUIDiv
@@ -66,7 +67,7 @@ html, body, div {
     width: 70%;
     margin-left: 15%;
     padding: 25px;
-    background-color: #F0FFFF;
+    
 }
 
 .buttons
