@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Add Contact</title>
+  <script type="text/javascript" src="js/code.js"></script>
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+<body>
+  <div id="addContactDiv">
+
+    <input type="text" class = "input_fields" id="newContactFirst" placeholder="First Name">
+    <input type="text" class = "input_fields" id="newContactLast" placeholder="Last Name">
+    <input type="text" class = "input_fields" id="newContactEmail" placeholder="Email">
+    <input type="text" class = "input_fields" id="newContactPhone" placeholder="PhoneNumber">
+
+    <button type="button" id="addContactButton" class="buttons" onclick="addContact();"> Add Contact </button><br />
+    <br><span id="contactAddResult"></span>
+    <a href="#" class="previous">Cancel</a><br>
+
+  </div>
+</body>
+</html>

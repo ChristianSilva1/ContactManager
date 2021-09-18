@@ -212,7 +212,7 @@ function addContact()
 	{
 		document.getElementById("contactAddResult").innerHTML = err.message;
 	}
-
+	history.back();
 }
 
 function searchColor()
