@@ -13,13 +13,12 @@ function doLogin()
 
 	var login = document.getElementById("loginName").value;
 	var password = document.getElementById("loginPassword").value;
-//var hash = md5( password );
+//	var hash = md5( password );
 
 	document.getElementById("loginResult").innerHTML = "";
 
 	var tmp = {login:login,password:password};
-	//var tmp = {login:login,password:hash};
-
+//	var tmp = {login:login,password:hash};
 	var jsonPayload = JSON.stringify( tmp );
 
 	var url = urlBase + '/Login.' + extension;
@@ -77,12 +76,6 @@ function doSignUp()
 	if (password1 !== password2)
 	{
 		document.getElementById("loginResult").innerHTML = "Passwords do not match!";
-		return;
-	} else if (userName === ''){
-		document.getElementById("loginResult").innerHTML = "Name field missing";
-		return;
-	} else if (password1 === '' || password2 === '') {
-		document.getElementById("loginResult").innerHTML = "Password field missing";
 		return;
 	}
 
@@ -174,23 +167,21 @@ function doLogout()
 
 function addContact()
 {
-	var contactFirst = document.getElementById("NewContactFirst").value;
-	var contactLast = document.getElementById("NewContactLast").value;
-	var contactEmail = document.getElementById("NewContactEmail").value;
-	var contactPhone = document.getElementById("NewContactPhone").value;
+	var addFirst = document.getElementById("newContactFirst").value;
+	var addLast = document.getElementById("newContactLast").value;
+	var addEmail = document.getElementById("newContactEmail").value;
+	var addPhone = document.getElementById("newContactPhone").value;
 
 	document.getElementById("contactAddResult").innerHTML = "";
 
-	try {
-		if (contactFirst === "") {
-			document.getElementById("contactAddResult").innerHTML = "Contact needs a name at least";
-			return;
-		}
-	} catch (err) {
-		document.getElementById("contactAddResult").innerHTML = err.message;
+	if(addFirst === '' || addLast === '' || addEmail === '' || addPhone === '')
+	{
+		document.getElementById("contactAddResult").innerHTML = "Please fill out all fields";
+		return;
 	}
 
-	var tmp = {First:contactFirst,Last:contactLast,Email:contactEmail,Phone:contactPhone, userId,userId};
+
+	var tmp = { id: userId, addFirstName: addFirst, addLastName: addLast, addEmail: addEmail,	addPhoneNumber: addPhone};
 	var jsonPayload = JSON.stringify( tmp );
 
 	var url = urlBase + '/AddContact.' + extension;
@@ -200,7 +191,6 @@ function addContact()
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	try
 	{
-
 		xhr.onreadystatechange = function()
 		{
 			if (this.readyState == 4 && this.status == 200)
@@ -217,7 +207,7 @@ function addContact()
 
 }
 
-function searchContact()
+function searchColor()
 {
 	var srch = document.getElementById("searchText").value;
 	document.getElementById("colorSearchResult").innerHTML = "";

@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 'On');
+ini_set("error_log", "/tmp/php.log");
+error_reporting(E_ALL);
 	$inData = getRequestInfo();
 
 	$UserId = $inData["id"];
@@ -14,12 +17,7 @@
 	}
 	else
 	{
-		if (empty($ContactFirstName) || empty($ContactLastName) || empty($Email) || empty($Phone))
-			{
-				returnWithError("Fill in all required fields");
-				exit();
-			}
-		else if (createContact($conn, $inData["id"], $inData["addFirstName"], $inData["addLastName"], $inData["addEmail"], $inData["addPhoneNumber"]))
+		if (createContact($conn, $inData["id"], $inData["addFirstName"], $inData["addLastName"], $inData["addEmail"], $inData["addPhoneNumber"]))
 			{
 				$contactInfo = getContactInfo($conn, $ContactFirstName, $ContactLastName);
 				returnWithInfo($contactInfo["ID"]);
