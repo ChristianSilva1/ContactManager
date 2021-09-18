@@ -72,22 +72,25 @@ function doSignUp()
 
 	document.getElementById("signUpResult").innerHTML = "";
 
-
+try {
 	if (password1 !== password2)
 	{
-		document.getElementById("loginResult").innerHTML = "Passwords do not match!";
+		document.getElementById("signUpResult").innerHTML = "Passwords do not match!";
 		return;
 	}
 	if (password1 === '' || password2 === '')
 	{
-		document.getElementById("loginResult").innerHTML = "Password field missing";
+		document.getElementById("signUpResult").innerHTML = "Password field missing";
 		return;
 	}
 	if (userName === '')
 	{
-		document.getElementById("loginResult").innerHTML = "Username field missing";
+		document.getElementById("signUpResult").innerHTML = "Username field missing";
 		return;
 	}
+} catch (err) {
+	document.getElementById("signUpResult").innerHTML = err.message;
+}
 
 	var password = password1;
 	//API Vocab Class
@@ -183,11 +186,16 @@ function addContact()
 
 	document.getElementById("contactAddResult").innerHTML = "";
 
+try {
 	if(addFirst === '' || addLast === '' || addEmail === '' || addPhone === '')
 	{
-		document.getElementById("contactAddResult").innerHTML = "Please fill out all fields";
+		document.getElementById("contactAddResult").innerHTML = "Please fill all fields";
 		return;
 	}
+} catch (err) {
+	document.getElementById("contactAddResult").innerHTML = err.message;
+}
+
 
 	var tmp = { id: userId, addFirstName: addFirst, addLastName: addLast, addEmail: addEmail,	addPhoneNumber: addPhone};
 	var jsonPayload = JSON.stringify( tmp );
