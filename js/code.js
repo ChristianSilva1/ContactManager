@@ -174,6 +174,13 @@ function addContact()
 
 	document.getElementById("contactAddResult").innerHTML = "";
 
+	if(addFirst === '' || addLast === '' || addEmail === '' || addPhone === '')
+	{
+		document.getElementById("contactAddResult").innerHTML = "Please fill out all fields";
+		return;
+	}
+
+
 	var tmp = { id: userId, addFirstName: addFirst, addLastName: addLast, addEmail: addEmail,	addPhoneNumber: addPhone};
 	var jsonPayload = JSON.stringify( tmp );
 
