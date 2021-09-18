@@ -78,6 +78,16 @@ function doSignUp()
 		document.getElementById("loginResult").innerHTML = "Passwords do not match!";
 		return;
 	}
+	if (password1 === '' || password2 === '')
+	{
+		document.getElementById("loginResult").innerHTML = "Password field missing";
+		return;
+	}
+	if (userName === '')
+	{
+		document.getElementById("loginResult").innerHTML = "Username field missing";
+		return;
+	}
 
 	var password = password1;
 	//API Vocab Class
@@ -89,7 +99,6 @@ function doSignUp()
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-
 
 	try {
 			xhr.onreadystatechange = function()
@@ -179,7 +188,6 @@ function addContact()
 		document.getElementById("contactAddResult").innerHTML = "Please fill out all fields";
 		return;
 	}
-
 
 	var tmp = { id: userId, addFirstName: addFirst, addLastName: addLast, addEmail: addEmail,	addPhoneNumber: addPhone};
 	var jsonPayload = JSON.stringify( tmp );
