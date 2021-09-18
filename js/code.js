@@ -167,14 +167,14 @@ function doLogout()
 
 function addContact()
 {
-	var contactFirst = document.getElementById("NewContactFirst").value;
-	var contactLast = document.getElementById("NewContactLast").value;
-	var contactEmail = document.getElementById("NewContactEmail").value;
-	var contactPhone = document.getElementById("NewContactPhone").value;
+	var addFirst = document.getElementById("newContactFirst").value;
+	var addLast = document.getElementById("newContactLast").value;
+	var addEmail = document.getElementById("newContactEmail").value;
+	var addPhone = document.getElementById("newContactPhone").value;
 
 	document.getElementById("contactAddResult").innerHTML = "";
 
-	var tmp = {First:contactFirst,Last:contactLast,Email:contactEmail,Phone:contactPhone, userId,userId};
+	var tmp = { id: userId, addFirstName: addFirst, addLastName: addLast, addEmail: addEmail,	addPhoneNumber: addPhone};
 	var jsonPayload = JSON.stringify( tmp );
 
 	var url = urlBase + '/AddContact.' + extension;
