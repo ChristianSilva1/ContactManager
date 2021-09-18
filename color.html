@@ -22,6 +22,17 @@
 	<button type="button" id="logoutButton" class="buttons" onclick="doLogout();"> Log Out </button>
 </div>
 
+<div id="listDiv">
+	<div class="d-flex justify-content-center">
+		<div class="spinner-border"
+			role="status" id="loading">
+			<span class="sr-only">Loading...</span>
+		</div>
+	</div>
+	<h1>Contacts List</h1>
+	<table id="contacts"></table>
+</div>
+
 <div id="accessUIDiv">
 	<br />
 
@@ -32,7 +43,7 @@
 	</p><br /><br />
 
 	<button type="button" id="searchColorButton" class="buttons" onclick="window.location.href='http://www.group15apps.xyz/add.html'"> Add New Contact </button><br />
-	
+
 </div>
 
 </body>

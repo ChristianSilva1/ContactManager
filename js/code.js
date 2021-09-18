@@ -215,6 +215,53 @@ function addContact()
 	history.back();
 }
 
+// List  Code Starts Here
+async function getContacts() {
+
+		var url = urlBase + '/ContactInfo.' + extension; //Change to whaterver API is named
+    const response = await fetch(url);
+
+    var data = await response.json();
+    console.log(data);
+    if (response) {
+        hideloader();
+    }
+    show(data);
+}
+
+getContacts();
+
+function hideloader() {
+    document.getElementById('loading').style.display = 'none';
+}
+
+function show(data) {
+    let tab =
+        `<tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+         </tr>`;
+
+
+    for (let r of data.list) {
+        tab += `<tr>
+    <td>${r.FirstName} </td>
+    <td>${r.LastName}</td>
+    <td>${r.Email}</td>
+    <td>${r.Phone}</td>
+		</tr>`;
+    }
+
+    document.getElementById("contacts").innerHTML = tab;
+}
+
+
+//List Code Ends Here
+
+
+
 function searchColor()
 {
 	var srch = document.getElementById("searchText").value;
