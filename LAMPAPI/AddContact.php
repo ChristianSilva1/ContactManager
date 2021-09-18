@@ -17,29 +17,11 @@ error_reporting(E_ALL);
 	}
 	else
 	{
-		if (createContact($conn, $inData["id"], $inData["addFirstName"], $inData["addLastName"], $inData["addEmail"], $inData["addPhoneNumber"]))
-			{
-				$contactInfo = getContactInfo($conn, $ContactFirstName, $ContactLastName);
-				returnWithInfo($contactInfo["ID"]);
-				exit();
-			}
-		else
-			{
-				returnWithError("Error creating contact");
-				exit();
-			}
-	}
-
-	function getContactInfo($conn, $ContactFirstName, $ContactLastName)
-	{
-		$result = $conn->query("SELECT ID, FirstName, LastName, Email, Phone FROM Contacts WHERE FirstName = '$ContactFirstName' AND LastName = '$ContactLastName'") or die($conn->error);
-		return $result->fetch_assoc();
-	}
-
-	function createContact($conn, $id, $addFirstName, $addLastName, $addEmail, $addPhoneNumber)
-	{
-		$result = $conn->query("INSERT INTO Contacts (UserId, FirstName, LastName, Email, Phone) VALUES ('$id', '$addFirstName','$addLastName','$addEmail','$addPhoneNumber')");
-		return $result;
+			$stmt = $conn->prepare("INSERT INTO Contacts (UserId, FirstName, LastName, Email, Phone) VALUES (?,?,?,?,?)");
+			$stmt->bind_param("sssss", $UserId, $ContactFirstName, $ContactLastName, $Email, $Phone);
+		  $stmt->execute();
+			$stmt->close();
+			$conn->close();
 	}
 
 	function getRequestInfo()
