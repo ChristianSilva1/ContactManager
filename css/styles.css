@@ -1,52 +1,205 @@
-html, body, div {
+*{
+  margin: 0;
+  padding: 0:
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+  background: aliceblue
+}
+
+nav{
+    display: flex;
     width: 100%;
-    height:100%;
+    background: #0a5071;
+    position: relative;
+    justify-content: space-between;
+    text-align: center;
+    padding: 30px 30px;
+}
+
+nav .icon{
+    font-size: 50px;
+    font-weight: 8--;
+    color: #fff;
+    cursor: pointer;
+    background: #0a5071;
+}
+
+#searchText{
+    font-size: 30px;
+    border-radius: 25px;
+    text-align: center;
+    width: 25%;
+    margin-left: 1%;
+    margin-bottom: 10%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#searchColorButton{
+  font-size: 30px;
+  width: 500px;
+  border-radius: 25px;
+  width: 15%;
+  font-family: 'Caveat', 'sans-serif';
+  cursor: pointer;
   }
 
-  body {
-      background: linear-gradient(-45deg, #ee9ca7,#e4a9bf, #94c3d4,#ffdde1);
-      background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
-  }
+#addColorButton{
+  font-size: 30px;
+  width: 200px;
+  border-radius: 25px;
+  margin-left: 46%;
+  margin-bottom: 10%;
+  font-family: 'Caveat', 'sans-serif';
+  cursor: pointer;
+}
 
-  @keyframes gradient {
-      0% {
-          background-position: 0% 50%;
-      }
-      50% {
-          background-position: 100% 50%;
-      }
-      100% {
-          background-position: 0% 50%;
-      }
-  }
+#addContactButton{
+	  font-size: 30px;
+  width: 200px;
+  border-radius: 25px;
+  margin-left: 46%;
+  margin-bottom: 10%;
+  background: lightgray;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 0 auto;
+  display: block;
+}
 
-#title
+#logoutButton{
+  font-size: 20px;
+  width: 200px;
+  border-radius: 25px;
+  margin-left: 44%;
+  margin-right: 4%;
+  font-family: 'Caveat', 'sans-serif';
+  cursor: pointer;
+}
+
+nav1
 {
     font-size: 40px;
     width: 100%;
-    margin: 2% ;
     text-align: center;
-    font-family: 'Caveat', 'sans-serif';
+    font-family: 'Ubuntu', sans-serif;
     color: #000;
+    display: flex;
+    background: #0a5071;
+    padding: 30px 30px;
+    margin-bottom: 10%;
+}
+nav1 .icon{
+    font-size: 50px;
+    text-align: Center;
+    color: #fff;
+    background: #0a5071;
 }
 
 #loginDiv
 {
     font-size: 30px;
-    font-family: 'Caveat', 'sans-serif';
     width: 70%;
     margin-left: 15%;
     padding: 25px;
+    background-color: #0a5071;
+    align-items: center;
+    justify-content: center;
 }
 
+#addContactDiv{
+	 font-size: 30px;
+    width: 70%;
+    margin-left: 15%;
+    padding: 25px;
+    background-color: #0a5071;
+    align-items: center;
+    justify-content: center;
+}
+
+#newContactFirst{
+	background: #FFF;
+}
+#newContactLast{
+	background: #FFF;
+}
+#newContactEmail{
+	background: #FFF;
+}
+#newContactPhone{
+	background: #FFF;
+}
+
+
+#loginName{
+	background:#FFF;
+}
+
+#loginPassword{
+	background: #FFF;
+}
+
+#loginButton{
+  font-size: 30px;
+  width: 200px;
+  border-radius: 25px;
+  margin-left: 46%;
+  margin-bottom: 10%;
+  background: lightgray;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 0 auto;
+  display: block;
+}
+
+#signUpButton{
+	font-size: 30px;
+  width: 200px;
+  border-radius: 25px;
+  margin-left: 46%;
+  margin-bottom: 10%;
+  background: lightgray;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 0 auto;
+  display: block;
+}
+
+#cancelButton{
+  font-size: 30px;
+  width: 200px;
+  border-radius: 25px;
+  margin-left: 46%;
+  margin-bottom: 5%;
+  background: lightgray;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 0 auto;
+  display: block;
+}
 #signUpDiv
 {
     font-size: 30px;
     width: 70%;
     margin-left: 15%;
     padding: 25px;
+    margin-top: 10%;
+    background-color: #0a5071;
+    align-items: center;
+    justify-content: center;
 }
+
+#signUpTitle{
+	background-color: #0a5071;
+	text-align: Center;
+	font-size: 30px;
+	margin-bottom: 3%;
+	color: #FFF;
+}
+
 
 #loggedInDiv
 {
@@ -54,31 +207,9 @@ html, body, div {
     width: 70%;
     margin-left: 15%;
     padding: 25px;
+    background-color: #F0FFFF;
 }
 
-#accessUIDiv
-{
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-}
-
-.buttons
-{
-    font-size: 30px;
-    border-radius: 25px;
-    width: 50%;
-    margin-left: 25%;
-    font-family: 'Caveat', 'sans-serif';
-    cursor: pointer;
-}
-
-.buttons:hover{
-    background-color: rgb(230, 178, 178);
-    color: #bb2727;
-    opacity: 50%;
-}
 #loginName
 {
 	font-size: 30px;
@@ -90,27 +221,29 @@ html, body, div {
 #signUpFirstName
 {
 	font-size: 30px;
+	background: #FFF;
 }
 #signUpLastName
 {
 	font-size: 30px;
+	background: #FFF;
 }
 #signUpName
 {
 	font-size: 30px;
+	background: #FFF;
 }
 #signUpPassword1
 {
 	font-size: 30px;
+	background: #FFF;
 }
 #signUpPassword2
 {
 	font-size: 30px;
+	background: #FFF;
 }
-#searchText
-{
-	font-size: 30px;
-}
+
 #colorText
 {
 	font-size: 30px;
@@ -133,8 +266,9 @@ input[type="text"],input[type="password"]{
     text-align: center;
     margin-left: 5%;
     margin-bottom: 2%;
-    font-family: 'Caveat', 'sans-serif';
-    color: #000000;
+    font-family: Times New Roman, sans-serif;
+    color: #FFF;
+    background: #0a5071;
 }
 
 #userNameLabel
@@ -194,28 +328,6 @@ input[type="text"],input[type="password"]{
     margin-left: 40%;
 }
 
-#addContactDiv{
-  font-size: 30px;
-  width: 70%;
-  margin-left: 15%;
-  padding: 30px;
-}
-
-#newContactFirst{
-  font-size: 30px;
-}
-
-#newContactLast{
-  font-size: 30px;
-}
-
-#newContactEmail{
-  font-size: 30px;
-}
-#newContactPhone{
-  font-size: 30px;
-}
-
 select{
     width: 30%;
     margin-left: 35%;
@@ -228,7 +340,9 @@ select{
     display: none;
 }
 
-#colorAddResult{
+
+
+#contactAddResult{
     display: inline-block;
     font-size: 0.8em;
     width: 90%;
