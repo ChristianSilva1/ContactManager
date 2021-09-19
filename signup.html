@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
   <title>Sign Up</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,21 +7,25 @@
   <script type="text/javascript" src="js/code.js"></script>
   <link href="css/styles.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&amp;display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <h1 id="title">CREATE YOUR ACCOUNT HERE!</h1>
-  <div id="signUpDiv">
-    <input type="text" id="signUpFirstName" placeholder="First Name"/><br />
-    <input type="text" id="signUpLastName" placeholder="Last Name"/><br />
-    <input type="text" id="signUpName" placeholder="Username"/><br />
-    <input type="password" id="signUpPassword1" placeholder="Password"/><br />
-    <input type="password" id="signUpPassword2" placeholder="Repeat Password"/><br />
+  <nav>
+            <div class="icon"> Contact Manager</div>
+    </nav>
+  <div id="signUpDiv"><h1 id="signUpTitle">CREATE AN USER</h1>
+
+    <input type="text" id="signUpFirstName" placeholder="First Name"><br>
+    <input type="text" id="signUpLastName" placeholder="Last Name"><br>
+    <input type="text" id="signUpName" placeholder="Username"><br>
+    <input type="password" id="signUpPassword1" placeholder="Password"><br>
+    <input type="password" id="signUpPassword2" placeholder="Repeat Password"><br>
     <span id="signUpResult"></span>
-    <button type="button" id="signUpButton" class="buttons" onclick="doSignUp();"> Sign up! </button><br />
+    <button type="button" id="signUpButton" class="buttons" onclick="doSignUp();"> Sign up! </button><br>
     <p></p>
-    <button type="button" id="cancelButton" class="buttons" onclick="window.location.href='http://www.group15apps.xyz/index.html'" > Cancel </button>
+    <button type="button" id="cancelButton" class="buttons" onclick="window.location.href='index.html'"> Cancel </button>
   </div>
-</body>
-</html>
+
+
+</body></html>
