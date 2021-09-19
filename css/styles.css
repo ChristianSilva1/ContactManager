@@ -250,7 +250,7 @@ nav1 .icon{
 }
 
 input[type="text"],input[type="password"]{
-    border-radius: 25px;
+    border-radius: 10px;
     text-align: center;
     width: 80%;
     margin-left: 10%;
