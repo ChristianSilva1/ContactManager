@@ -4,6 +4,7 @@ var extension = 'php';
 var userId = 0;
 var firstName = "";
 var lastName = "";
+var getuserID;
 
 function doLogin()
 {
@@ -33,8 +34,8 @@ function doLogin()
 			if (this.readyState == 4 && this.status == 200)
 			{
 				var jsonObject = JSON.parse(xhr.responseText);
-				userId = jsonObject.id;
-
+				localStorage.setItem('userid', jsonObject.id);
+				userId = localStorage.getItem('userid');
 				if( userId < 1 )
 				{
 					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
@@ -43,10 +44,11 @@ function doLogin()
 
 				firstName = jsonObject.firstName;
 				lastName = jsonObject.lastName;
-
+				getuserID = userId;
 				saveCookie();
 
 				window.location.href = "color.html";
+				console.log(userId);
 			}
 		};
 		xhr.send(jsonPayload);
@@ -72,25 +74,12 @@ function doSignUp()
 
 	document.getElementById("signUpResult").innerHTML = "";
 
-try {
+
 	if (password1 !== password2)
 	{
-		document.getElementById("signUpResult").innerHTML = "Passwords do not match!";
+		document.getElementById("loginResult").innerHTML = "Passwords do not match!";
 		return;
 	}
-	if (password1 === '' || password2 === '')
-	{
-		document.getElementById("signUpResult").innerHTML = "Password field missing";
-		return;
-	}
-	if (userName === '')
-	{
-		document.getElementById("signUpResult").innerHTML = "Username field missing";
-		return;
-	}
-} catch (err) {
-	document.getElementById("signUpResult").innerHTML = err.message;
-}
 
 	var password = password1;
 	//API Vocab Class
@@ -102,6 +91,7 @@ try {
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
 
 	try {
 			xhr.onreadystatechange = function()
@@ -162,10 +152,6 @@ function readCookie()
 	{
 		window.location.href = "index.html";
 	}
-	else
-	{
-		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
-	}
 }
 
 function doLogout()
@@ -179,23 +165,19 @@ function doLogout()
 
 function addContact()
 {
+	userId = localStorage.getItem('userid')
 	var addFirst = document.getElementById("newContactFirst").value;
 	var addLast = document.getElementById("newContactLast").value;
 	var addEmail = document.getElementById("newContactEmail").value;
 	var addPhone = document.getElementById("newContactPhone").value;
-
+	console.log(userId);
 	document.getElementById("contactAddResult").innerHTML = "";
 
-try {
 	if(addFirst === '' || addLast === '' || addEmail === '' || addPhone === '')
 	{
 		document.getElementById("contactAddResult").innerHTML = "Please fill all fields";
 		return;
 	}
-} catch (err) {
-	document.getElementById("contactAddResult").innerHTML = err.message;
-}
-
 
 	var tmp = { id: userId, addFirstName: addFirst, addLastName: addLast, addEmail: addEmail,	addPhoneNumber: addPhone};
 	var jsonPayload = JSON.stringify( tmp );
@@ -211,8 +193,13 @@ try {
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
+				document.getElementById("contactAddResult").innerHTML = "Contact has been added, redirecting to main page....";
 			}
+			window.setTimeout(function(){
+        // Move to a new location or you can do something else
+        window.location.href = "color.html";
+    }, 5000);
+			addContactToTable(addFirst, addLast, addPhone, addEmail, userId);
 		};
 		xhr.send(jsonPayload);
 	}
@@ -220,55 +207,8 @@ try {
 	{
 		document.getElementById("contactAddResult").innerHTML = err.message;
 	}
-	history.back();
+
 }
-
-// List  Code Starts Here
-async function getContacts() {
-
-		var url = urlBase + '/ContactInfo.' + extension; //Change to whaterver API is named
-    const response = await fetch(url);
-
-    var data = await response.json();
-    console.log(data);
-    if (response) {
-        hideloader();
-    }
-    show(data);
-}
-
-getContacts();
-
-function hideloader() {
-    document.getElementById('loading').style.display = 'none';
-}
-
-function show(data) {
-    let tab =
-        `<tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Phone Number</th>
-         </tr>`;
-
-
-    for (let r of data.list) {
-        tab += `<tr>
-    <td>${r.FirstName} </td>
-    <td>${r.LastName}</td>
-    <td>${r.Email}</td>
-    <td>${r.Phone}</td>
-		</tr>`;
-    }
-
-    document.getElementById("contacts").innerHTML = tab;
-}
-
-
-//List Code Ends Here
-
-
 
 function searchColor()
 {
@@ -312,5 +252,59 @@ function searchColor()
 	{
 		document.getElementById("colorSearchResult").innerHTML = err.message;
 	}
+}
 
+function addRow(obj)
+{
+	var row = `<tr scope="row" class="test-row-${obj.contactID}">
+								<td id="contactID-${obj.contactID}" class="d-none" data-testid="${obj.contactID}">${obj.contactID}</td>
+								<td id="firstName-${obj.contactID}" data-testid="${obj.contactID}">${obj.firstName}</td>
+								<td id="lastName-${obj.contactID}" data-testid="${obj.contactID}">${obj.lastName}</td>
+								<td id="email-${obj.contactID}" data-testid="${obj.contactID}">${obj.email}</td>
+								<td id="phone-${obj.contactID}" data-testid="${obj.contactID}">${obj.phone}</td>
+								<td>
+
+								</td>
+							</tr>`
+
+	$('#tests-table').append(row)
+}
+
+function displayTable()
+{
+	// Package a JSON payload to deliver to the DisplayTable Endpoint with
+	// the UserID in order to display their contacts.
+	userId = localStorage.getItem('userId');
+  var jsonPayload =
+  	'{"UserID" : "' + userId + '"}';
+	var url = urlBase + '/DisplayContacts.' + extension;
+	var xhr = new XMLHttpRequest();
+
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	// Basic try and catch to ensure that any server code errors are
+	// handled properly.
+	try
+	{
+		xhr.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+				console.log("Success in displayTable()");
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		console.log("Failure in displayTable()");
+	}
+
+	var contactList = JSON.parse(xhr.responseText);
+
+	// For each contact in the JSON array, the contact's
+	// information will be added to the table.
+	for (var i in contactList)
+  {
+  	addRow(contactList[i]);
+  }
 }
