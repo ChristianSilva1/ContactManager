@@ -193,12 +193,7 @@ function addContact()
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-<<<<<<< HEAD
-				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
-				addToList(addFirst, addLast, addPhone, addEmail, 5);
-=======
 				document.getElementById("contactAddResult").innerHTML = "Contact has been added, redirecting to main page....";
->>>>>>> 9ea013ccdfa82bb7144dce55d1a68c89a10fafbb
 			}
 			window.setTimeout(function(){
         // Move to a new location or you can do something else
@@ -213,87 +208,8 @@ function addContact()
 		document.getElementById("contactAddResult").innerHTML = err.message;
 	}
 
-<<<<<<< HEAD
-function addToList(firstName, lastName, email, phone, ID){
-
-	var body = document.querySelector("#table tbody");
-
-	var row = document.createElement("tr");
-
-	row.id = 'contact${contactId}';
-
-	var tFirstName  = document.createElement("td");
-	tFirstName.innerHTML = firstName;
-	row.appendChild(tFirstName);
-
-	var tLastName  = document.createElement("td");
-	tLastName.innerHTML = lastName;
-	row.appendChild(tLastName);
-
-	var tEmail  = document.createElement("td");
-	tEmail.innerHTML = email;
-	row.appendChild(tEmail);
-
-	ar tPhone  = document.createElement("td");
-	tPhone.innerHTML = phone;
-	row.appendChild(tPhone);
-
-	body.appendChild(row);
 }
 
-// List  Code Starts Here
-/*
-async function getContacts() {
-
-		var url = urlBase + '/ContactInfo.' + extension; //Change to whaterver API is named
-    const response = await fetch(url);
-
-    var data = await response.json();
-    console.log(data);
-    if (response) {
-        hideloader();
-    }
-    show(data);
-}
-
-getContacts();
-
-function hideloader() {
-    document.getElementById('loading').style.display = 'none';
-}
-
-function show(data) {
-    let tab =
-        `<tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Phone Number</th>
-         </tr>`;
-
-
-    for (let r of data.list) {
-        tab += `<tr>
-    <td>${r.FirstName} </td>
-    <td>${r.LastName}</td>
-    <td>${r.Email}</td>
-    <td>${r.Phone}</td>
-		</tr>`;
-    }
-
-    document.getElementById("contacts").innerHTML = tab;
-}
-*/
-
-//List Code Ends Here
-
-
-
-=======
-
-}
-
->>>>>>> 9ea013ccdfa82bb7144dce55d1a68c89a10fafbb
 function searchColor()
 {
 	var srch = document.getElementById("searchText").value;
