@@ -24,6 +24,11 @@ nav .icon{
     background: #0a5071;
 }
 
+#logo{
+  width: 70px;
+  margin-right: 10px;
+}
+
 #searchText{
     font-size: 30px;
     border-radius: 25px;
