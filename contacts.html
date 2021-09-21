@@ -4,22 +4,28 @@
     <script type="text/javascript" src="js/code.js"></script>
       <link href="css/styles.css" rel="stylesheet">
   		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-			<script type="text/javascript">
-				document.addEventListener('DOMContentLoaded', function()
-				{
-					readCookie();
-				}, false);
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', function()
+			{
+				readCookie();
+			}, false);
 
-				window.onload = function()
-				{
-		  		displayTable();
-				};
-			</script>
+			window.onload = function()
+			{
+	  		displayTable();
+			};
 		</script>
 	</head>
-	<body>
+<body>
+		<nav1>
+			<img src="images/logo.png" id="logo" alt="logo">
+			<div class="icon"> Contact Manager </div>
+			<button type="button" id="logoutButton"class="buttons" onclick="doLogout();">
+				<img id="logoutImg"src="images/logout.png" alt="log out">
+			</button>
+		</nav1>
 	<div id="accessUIDiv">
-		<br /></p><br /><br />
+		<br><br>
 		<button type="button" id="addContactButton" class="buttons" onclick="window.location.href='http://www.group15apps.xyz/add.html'"> Add New Contact </button><br/>
 		<br>
 		<input type="text" id="searchText" placeholder="Search for Contact">
@@ -40,6 +46,20 @@
 					</tr>
 				</thead>
 				<tbody id="tests-table">
+
+					<tr scope="row">
+						<td>Gus</td>
+						<td>Cornejo</td>
+						<td>gustavoxcornejo@gmial.com</td>
+						<td>4076248456</td>
+						<td><button type="button" class="miniButton" class="buttons" onclick="editContact();">
+							<img id="miniButtonImg"src="images/edit.png" alt="delete">
+						</button></td>
+						<td><button type="button" class="miniButton" class="buttons" onclick="deleteContact();">
+							<img id="miniButtonImg"src="images/delete.png" alt="delete">
+						</button></td>
+					</tr>
+
 				</tbody>
 			</table>
 		</div>

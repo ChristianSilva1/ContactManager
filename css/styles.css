@@ -39,7 +39,7 @@ nav .icon{
     font-family: 'Ubuntu', sans-serif;
 }
 
-#searchColorButton{
+#searchContactButton{
   font-size: 30px;
   width: 500px;
   border-radius: 25px;
@@ -48,7 +48,7 @@ nav .icon{
   cursor: pointer;
   }
 
-#addColorButton{
+#addContactButton{
   font-size: 30px;
   width: 200px;
   border-radius: 25px;
@@ -72,14 +72,27 @@ nav .icon{
   display: block;
 }
 
+.miniButton{
+  width: 40px;
+  length: 20px;
+}
+
+#miniButtonImg{
+  width: 20px;
+  length: 20px;
+}
+
 #logoutButton{
-  font-size: 20px;
-  width: 200px;
-  border-radius: 25px;
-  margin-left: 44%;
-  margin-right: 4%;
-  font-family: 'Caveat', 'sans-serif';
-  cursor: pointer;
+    width: 70px;
+    float: right;
+    margin-left: auto;
+    margin-right: 80px;
+}
+
+
+#logoutImg{
+  width: 50px;
+  length: 50px;
 }
 
 nav1
@@ -135,7 +148,6 @@ nav1 .icon{
 	background: #FFF;
 }
 
-
 #loginName{
 	background:#FFF;
 }
@@ -185,6 +197,7 @@ nav1 .icon{
   margin: 0 auto;
   display: block;
 }
+
 #signUpDiv
 {
     font-size: 30px;
@@ -204,7 +217,6 @@ nav1 .icon{
 	margin-bottom: 3%;
 	color: #FFF;
 }
-
 
 #loggedInDiv
 {
@@ -328,11 +340,6 @@ input[type="text"],input[type="password"]{
     text-align: center;
 }
 
-#logoutButton{
-    width: 20%;
-    margin-left: 40%;
-}
-
 select{
     width: 30%;
     margin-left: 35%;
@@ -341,11 +348,9 @@ select{
     font-family: 'Ubuntu', sans-serif;
 }
 
-#colorSearchResult{
+#contactSearchResult{
     display: none;
 }
-
-
 
 #contactAddResult{
     display: inline-block;

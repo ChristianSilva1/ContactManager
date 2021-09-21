@@ -262,11 +262,13 @@ function addRow(obj)
 								<td id="lastName-${obj.contactID}" data-testid="${obj.contactID}">${obj.lastName}</td>
 								<td id="email-${obj.contactID}" data-testid="${obj.contactID}">${obj.email}</td>
 								<td id="phone-${obj.contactID}" data-testid="${obj.contactID}">${obj.phone}</td>
-								<td>
-
-								</td>
+								<td><button type="button" class="miniButton" class="buttons" onclick="editContact();">
+									<img id="miniButtonImg"src="images/edit.png" alt="delete">
+								</button></td>
+								<td><button type="button" class="miniButton" class="buttons" onclick="deleteContact();">
+									<img id="miniButtonImg"src="images/delete.png" alt="delete">
+								</button></td>
 							</tr>`
-
 	$('#tests-table').append(row)
 }
 
@@ -307,4 +309,12 @@ function displayTable()
   {
   	addRow(contactList[i]);
   }
+}
+
+function editContact(key){
+
+}
+
+function deleteContact(key){
+
 }
