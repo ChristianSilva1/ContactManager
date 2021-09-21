@@ -47,7 +47,7 @@ function doLogin()
 				getuserID = userId;
 				saveCookie();
 
-				window.location.href = "color.html";
+				window.location.href = "contacts.html";
 				console.log(userId);
 			}
 		};
@@ -197,7 +197,7 @@ function addContact()
 			}
 			window.setTimeout(function(){
         // Move to a new location or you can do something else
-        window.location.href = "color.html";
+        window.location.href = "contacts.html";
     }, 5000);
 			addContactToTable(addFirst, addLast, addPhone, addEmail, userId);
 		};
@@ -209,8 +209,8 @@ function addContact()
 	}
 
 }
-
-function searchColor()
+//Modify this
+function searchContact()
 {
 	var srch = document.getElementById("searchText").value;
 	document.getElementById("colorSearchResult").innerHTML = "";

@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>Contact Manager</title>
+    <script type="text/javascript" src="js/code.js"></script>
+      <link href="css/styles.css" rel="stylesheet">
+  		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+			<script type="text/javascript">
+				document.addEventListener('DOMContentLoaded', function()
+				{
+					readCookie();
+				}, false);
+
+				window.onload = function()
+				{
+		  		displayTable();
+				};
+			</script>
+		</script>
+	</head>
+	<body>
+	<div id="accessUIDiv">
+		<br /></p><br /><br />
+		<button type="button" id="addContactButton" class="buttons" onclick="window.location.href='http://www.group15apps.xyz/add.html'"> Add New Contact </button><br/>
+		<br>
+		<input type="text" id="searchText" placeholder="Search for Contact">
+		<button type="button" id="searchContactButton" class="buttons" onclick="searchContact();"> Search </button>
+	  <button type="button" id="addContactButton" class="buttons" onclick="window.location.href='add.html'">Add Contact</button>
+		<span id="contactSearchResult"></span>
+		<div id="tableDiv">
+			<h2> Contacts List </h2>
+			<table id="contactsTable" class="table table-striped text-center">
+				<thead id="tableHeader">
+					<tr>
+						<th class="d-none">ID #</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+						<th>Phone</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody id="tests-table">
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
