@@ -262,7 +262,7 @@ function addRow(obj)
 								<td id="lastName-${obj.contactID}" data-testid="${obj.contactID}">${obj.lastName}</td>
 								<td id="email-${obj.contactID}" data-testid="${obj.contactID}">${obj.email}</td>
 								<td id="phone-${obj.contactID}" data-testid="${obj.contactID}">${obj.phone}</td>
-								<td><button type="button" class="miniButton" class="buttons" onclick="editContact();">
+								<td><button type="button" class="miniButton" class="buttons" onclick="window.location.href='http://www.group15apps.xyz/edit.html'">
 									<img id="miniButtonImg"src="images/edit.png" alt="delete">
 								</button></td>
 								<td><button type="button" class="miniButton" class="buttons" onclick="deleteContact();">
