@@ -213,14 +213,14 @@ function addContact()
 function searchContact()
 {
 	var srch = document.getElementById("searchText").value;
-	document.getElementById("colorSearchResult").innerHTML = "";
+	document.getElementById("contactSearchResult").innerHTML = "";
 
 	var colorList = "";
 
 	var tmp = {search:srch,userId:userId};
 	var jsonPayload = JSON.stringify( tmp );
 
-	var url = urlBase + '/SearchColors.' + extension;
+	var url = urlBase + '/SearchContacts.' + extension;
 
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -231,7 +231,7 @@ function searchContact()
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-				document.getElementById("colorSearchResult").innerHTML = "Color(s) has been retrieved";
+				document.getElementById("contactSearchResult").innerHTML = "Contacts has been retrieved";
 				var jsonObject = JSON.parse( xhr.responseText );
 
 				for( var i=0; i<jsonObject.results.length; i++ )
@@ -250,71 +250,6 @@ function searchContact()
 	}
 	catch(err)
 	{
-		document.getElementById("colorSearchResult").innerHTML = err.message;
+		document.getElementById("contactSearchResult").innerHTML = err.message;
 	}
-}
-
-function addRow(obj)
-{
-	var row = `<tr scope="row" class="test-row-${obj.contactID}">
-								<td id="contactID-${obj.contactID}" class="d-none" data-testid="${obj.contactID}">${obj.contactID}</td>
-								<td id="firstName-${obj.contactID}" data-testid="${obj.contactID}">${obj.firstName}</td>
-								<td id="lastName-${obj.contactID}" data-testid="${obj.contactID}">${obj.lastName}</td>
-								<td id="email-${obj.contactID}" data-testid="${obj.contactID}">${obj.email}</td>
-								<td id="phone-${obj.contactID}" data-testid="${obj.contactID}">${obj.phone}</td>
-								<td><button type="button" class="miniButton" class="buttons" onclick="window.location.href='http://www.group15apps.xyz/edit.html'">
-									<img id="miniButtonImg"src="images/edit.png" alt="delete">
-								</button></td>
-								<td><button type="button" class="miniButton" class="buttons" onclick="deleteContact();">
-									<img id="miniButtonImg"src="images/delete.png" alt="delete">
-								</button></td>
-							</tr>`
-	$('#tests-table').append(row)
-}
-
-function displayTable()
-{
-	// Package a JSON payload to deliver to the DisplayTable Endpoint with
-	// the UserID in order to display their contacts.
-	userId = localStorage.getItem('userId');
-  var jsonPayload =
-  	'{"UserID" : "' + userId + '"}';
-	var url = urlBase + '/DisplayContacts.' + extension;
-	var xhr = new XMLHttpRequest();
-
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-
-	// Basic try and catch to ensure that any server code errors are
-	// handled properly.
-	try
-	{
-		xhr.onreadystatechange = function()
-		{
-			if (this.readyState == 4 && this.status == 200)
-				console.log("Success in displayTable()");
-		};
-		xhr.send(jsonPayload);
-	}
-	catch(err)
-	{
-		console.log("Failure in displayTable()");
-	}
-
-	var contactList = JSON.parse(xhr.responseText);
-
-	// For each contact in the JSON array, the contact's
-	// information will be added to the table.
-	for (var i in contactList)
-  {
-  	addRow(contactList[i]);
-  }
-}
-
-function editContact(key){
-
-}
-
-function deleteContact(key){
-
 }
