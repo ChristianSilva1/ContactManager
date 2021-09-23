@@ -9,6 +9,10 @@
 			{
 				readCookie();
 			}, false);
+			window.onload = function()
+		{
+  		searchContact();
+		};
 			</script>
 
 	</head>
@@ -21,15 +25,26 @@
 			</button>
 		</nav1>
 	<div id="accessUIDiv">
-		<br><br>
-		<button type="button" id="addContactButton" class="buttons" onclick="window.location.href='http://www.group15apps.xyz/add.html'"> Add New Contact </button><br/>
-		<br>
+
 		<input type="text" id="searchText" placeholder="Search for Contact">
 		<button type="button" id="searchContactButton" class="buttons" onclick="searchContact();"> Search </button>
 	  <button type="button" id="addContactButton" class="buttons" onclick="window.location.href='add.html'">Add Contact</button>
 		<span id="contactSearchResult"></span>
-		<p id="colorList">
-		</p><br /><br />
+		<table class="styled-table">
+			 <thead>
+				 <tr>
+					 <th scope="col">ID</th>
+					 <th scope="col">First</th>
+					 <th scope="col">Last</th>
+					 <th scope="col">Email</th>
+					 <th scope="col">Phone Number</th>
+					 <th scope="col">Actions</th>
+				 </tr>
+			 </thead>
+			 <tbody>
+
+			 </tbody>
+		 </table>
 
 
 	</div>
