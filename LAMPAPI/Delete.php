@@ -2,7 +2,7 @@
 
   $inData = getRequestInfo();
 
-  $contactID = $inData["ID"];
+  $contactID = $inData["contactID"];
 
   $conn = new mysqli("localhost", "group15", "group15!!", "contact_manager");
   if ($conn->connect_error)
