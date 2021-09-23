@@ -27,7 +27,13 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
-			$searchResults .= '"'. $row["ID"] . $row["FirstName"] . $row["LastName"] . $row["Email"] . $row["Phone"] .'"';
+			$data = array("ID"=>$row["ID"],
+										"FirstName"=>$row["FirstName"],
+										"LastName"=>$row["LastName"],
+										"Email"=>$row["Email"],
+										"Phone"=>$row["Phone"]);
+
+		$searchResults .= json_encode($data);
 		}
 
 		if( $searchCount == 0 )
