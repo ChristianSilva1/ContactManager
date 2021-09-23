@@ -19,7 +19,7 @@ error_reporting(E_ALL);
 	{
 			$stmt = $conn->prepare("INSERT INTO Contacts (UserId, FirstName, LastName, Email, Phone) VALUES (?,?,?,?,?)");
 			$stmt->bind_param("sssss", $UserId, $ContactFirstName, $ContactLastName, $Email, $Phone);
-		  $stmt->execute();
+		  	$stmt->execute();
 			$stmt->close();
 			$conn->close();
 	}
