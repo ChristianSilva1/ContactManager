@@ -18,6 +18,12 @@ function doLogin()
 
 	document.getElementById("loginResult").innerHTML = "";
 
+	//Empty fields cannot login
+	if (login === "" || password === "") {
+		document.getElementById("loginResult").innerHTML = "Please fill all fields";
+		return;
+	}
+
 	var tmp = {login:login,password:password};
 //	var tmp = {login:login,password:hash};
 	var jsonPayload = JSON.stringify( tmp );
@@ -57,7 +63,6 @@ function doLogin()
 	{
 		document.getElementById("loginResult").innerHTML = err.message;
 	}
-
 }
 
 function doSignUp()
@@ -74,10 +79,13 @@ function doSignUp()
 
 	document.getElementById("signUpResult").innerHTML = "";
 
-
+	if (firstName == "" || lastName === "" || userName === "" || password1 == "" || password2 === "") {
+		document.getElementById("signUpResult").innerHTML = "Please fill all fields";
+		return;
+	}
 	if (password1 !== password2)
 	{
-		document.getElementById("loginResult").innerHTML = "Passwords do not match!";
+		document.getElementById("signUpResult").innerHTML = "Passwords do not match!";
 		return;
 	}
 
@@ -91,7 +99,6 @@ function doSignUp()
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-
 
 	try {
 			xhr.onreadystatechange = function()
@@ -147,7 +154,6 @@ function readCookie()
 			userId = parseInt( tokens[1].trim() );
 		}
 	}
-
 	if( userId < 0 )
 	{
 		window.location.href = "index.html";
@@ -209,7 +215,7 @@ function addContact()
 	}
 
 }
-//Modify this
+
 function searchContact()
 {
 	var srch = document.getElementById("searchText").value;
@@ -243,7 +249,7 @@ function searchContact()
 							// Putting here
 							saveCookie();
 							contactList += '<tr>';
-							contactList += '<td>' + jsonObject.results[i].ID + '</td>';
+							//contactList += '<td>' + jsonObject.results[i].ID + '</td>';
 							contactList += '<td>' + jsonObject.results[i].FirstName + '</td>';
 							contactList += '<td>' + jsonObject.results[i].LastName + '</td>';
 							contactList += '<td>' + jsonObject.results[i].Email + '</td>';
@@ -278,20 +284,19 @@ function deleteContact(CID)
 	try
 	{
 		xhr.onreadystatechange = function()
-	{
-		if (this.readyState == 4 && this.status == 200)
 		{
-			console.log("Deleted");
-			searchContact();
-		}
-	};
+			if (this.readyState == 4 && this.status == 200)
+			{
+				console.log("Deleted");
+				searchContact();
+			}
+		};
 	xhr.send(jsonPayload);
-}
-catch(err)
-{
-	document.getElementById("contactEditResult").innerHTML = "Could not delete";
-}
-
+	}
+	catch(err)
+	{
+		document.getElementById("contactEditResult").innerHTML = "Could not delete";
+	}
 }
 
 function setContact(CID)
@@ -299,7 +304,6 @@ function setContact(CID)
 	readCookie();
 	window.location.href = "edit.html";
 	localStorage.setItem('contactid', CID);
-
 }
 
 function editContact()
