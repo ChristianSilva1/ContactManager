@@ -1,5 +1,5 @@
 <html lang="en"><head>
-	<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Contact Manager</title>
@@ -22,25 +22,44 @@
 		        }
 		      }
 		    </style>
+
 </head>
+
 <body class="text-center">
 	<main class="form-signin">
 	  <form>
 	    <img class="mb-4" src="images/logo.png" alt="" width="80" height="80">
-	    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+	    <h1 class="h3 mb-3 fw-normal">Welcome to Contact Manager</h1>
 
+
+      <div class="form-floating">
+	      <input type="firsName" class="form-control" id="signUpFirstName" placeholder="First name">
+	      <label for="floatingInput">First name</label>
+	    </div>
+      <div class="form-floating">
+        <input type="lastName" class="form-control" id="signUpLastName" placeholder="Last name">
+        <label for="floatingInput">Last name</label>
+      </div>
+      <br>
 	    <div class="form-floating">
-	      <input type="username" class="form-control" id="loginName" placeholder="Username">
+	      <input type="username" class="form-control" id="signUpName" placeholder="Username">
 	      <label for="floatingInput">Username</label>
 	    </div>
+      <br>
 	    <div class="form-floating">
-	      <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+	      <input type="password" class="form-control" id="signUpPassword1" placeholder="Password">
 	      <label for="floatingPassword">Password</label>
 	    </div>
-	    <button class="w-100 btn btn-lg btn-primary" type="submit" onclick="doLogin();">Sign in</button>
-      <span class="mt-5 mb-3 text-muted" id="loginResult"></span>
-      <p class="mt-5 mb-3 text-muted">Not an user?<p>
-      <button class="btn btn-primary btn-sm" type="submit" onclick="window.location.href='signup.html'">Sign up</button>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="signUpPassword2" placeholder="Repeat Password">
+        <label for="floatingPassword">Repeat password</label>
+      </div>
+      <span class="mt-5 mb-3 text-muted" id="signUpResult"></span>
+	    <button class="w-100 btn btn-lg btn-primary" type="submit" onclick="doLogin();">Create user</button>
+      <br>
+      <br>
+      <button class="btn btn-primary btn-sm" type="submit" onclick="window.location.href='signup.html'">Cancel</button>
 	    <p class="mt-5 mb-3 text-muted">&copy; 2021 Group15apps</p>
 	  </form>
 	</main>
+</body></html>
