@@ -310,7 +310,7 @@ function setContact(CID)
 	window.location.href = "edit.html";
 	localStorage.setItem('contactid', CID);
 
-}
+} 
 
 function editContact()
 {
