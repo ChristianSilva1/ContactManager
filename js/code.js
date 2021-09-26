@@ -310,11 +310,10 @@ function setContact(CID)
 	window.location.href = "edit.html";
 	localStorage.setItem('contactid', CID);
 
-} 
+}
 
 function editContact()
 {
-	openForm();
 
 	var contactID = localStorage.getItem('contactid');
 	var addFirst = document.getElementById("newContactFirst").value;
