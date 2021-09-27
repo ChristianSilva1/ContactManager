@@ -5,6 +5,7 @@ var userId = 0;
 var firstName = "";
 var lastName = "";
 var contactID = 0;
+var displayUsername = "";
 
 function doLogin()
 {
@@ -14,6 +15,7 @@ function doLogin()
 
 	var login = document.getElementById("loginName").value;
 	var password = document.getElementById("loginPassword").value;
+	displayUsername = login;
 
 	if(login === '' || password === '')
 	{
@@ -225,6 +227,7 @@ function searchContact()
 {
 	var srch = document.getElementById("searchText").value;
 	document.getElementById("contactSearchResult").innerHTML = "";
+	document.getElementById("contactSearchResult").innerHTML = displayUsername;
 
 	var contactList = "";
 
