@@ -3,13 +3,13 @@
   padding: 0:
   box-sizing: border-box;
   font-family: 'Poppins',sans-serif;
-  background: aliceblue
+  background: #f5f5f5
 }
 
 nav{
     display: flex;
     width: 100%;
-    background: #0a5071;
+    background: #0d6efd;
     position: relative;
     justify-content: space-between;
     text-align: center;
@@ -21,7 +21,7 @@ nav .icon{
     font-weight: 8--;
     color: #fff;
     cursor: pointer;
-    background: #0a5071;
+    background: #0d6efd;
 }
 
 #logo{
@@ -36,7 +36,6 @@ nav .icon{
     width: 25%;
     margin-left: 1%;
     margin-bottom: 10%;
-    font-family: 'Ubuntu', sans-serif;
 }
 
 #searchContactButton{
@@ -48,27 +47,22 @@ nav .icon{
   cursor: pointer;
   }
 
-
 #addContactButton{
 	font-size: 30px;
   width: 200px;
   border-radius: 25px;
   margin-left: 40%;
   margin-bottom: 10%;
-  background: lightgray;
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
   align-items: center;
   justify-content: center;
   font-family: 'Caveat', 'sans-serif';
 }
 
-.miniButton{
-  width: 40px;
-  length: 20px;
-}
-
-#miniButtonImg{
-  width: 20px;
-  length: 20px;
+#accessUIDiv {
+  background: #f5f5f5;
 }
 
 #logoutButton{
@@ -77,7 +71,6 @@ nav .icon{
     margin-left: auto;
     margin-right: 80px;
 }
-
 
 #logoutImg{
   width: 50px;
@@ -92,7 +85,7 @@ nav1
     font-family: 'Ubuntu', sans-serif;
     color: #000;
     display: flex;
-    background: #0a5071;
+    background: #0d6efd;
     padding: 30px 30px;
     margin-bottom: 5%;
 }
@@ -100,168 +93,7 @@ nav1 .icon{
     font-size: 50px;
     text-align: Center;
     color: #fff;
-    background: #0a5071;
-}
-
-#loginDiv
-{
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-    background-color: #0a5071;
-    align-items: center;
-    justify-content: center;
-}
-
-#addContactDiv{
-	 font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-    background-color: #0a5071;
-    align-items: center;
-    justify-content: center;
-}
-
-#newContactFirst{
-	background: #FFF;
-}
-#newContactLast{
-	background: #FFF;
-}
-#newContactEmail{
-	background: #FFF;
-}
-#newContactPhone{
-	background: #FFF;
-}
-
-#loginName{
-	background:#FFF;
-}
-
-#loginPassword{
-	background: #FFF;
-}
-
-#loginButton{
-  font-size: 30px;
-  width: 200px;
-  border-radius: 25px;
-  margin-left: 46%;
-  margin-bottom: 10%;
-  background: lightgray;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  margin: 0 auto;
-  display: block;
-}
-
-#signUpButton{
-	font-size: 30px;
-  width: 200px;
-  border-radius: 25px;
-  margin-left: 46%;
-  margin-bottom: 10%;
-  background: lightgray;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  margin: 0 auto;
-  display: block;
-}
-
-#cancelButton{
-  font-size: 30px;
-  width: 200px;
-  border-radius: 25px;
-  margin-left: 46%;
-  margin-bottom: 5%;
-  background: lightgray;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  margin: 0 auto;
-  display: block;
-}
-
-#signUpDiv
-{
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-    margin-top: 10%;
-    background-color: #0a5071;
-    align-items: center;
-    justify-content: center;
-}
-
-#signUpTitle{
-	background-color: #0a5071;
-	text-align: Center;
-	font-size: 30px;
-	margin-bottom: 3%;
-	color: #FFF;
-}
-
-#loggedInDiv
-{
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-    background-color: #F0FFFF;
-}
-
-#loginName
-{
-	font-size: 30px;
-}
-#loginPassword
-{
-	font-size: 30px;
-}
-#signUpFirstName
-{
-	font-size: 30px;
-	background: #FFF;
-}
-#signUpLastName
-{
-	font-size: 30px;
-	background: #FFF;
-}
-#signUpName
-{
-	font-size: 30px;
-	background: #FFF;
-}
-#signUpPassword1
-{
-	font-size: 30px;
-	background: #FFF;
-}
-#signUpPassword2
-{
-	font-size: 30px;
-	background: #FFF;
-}
-
-#colorText
-{
-	font-size: 30px;
-}
-
-input[type="text"],input[type="password"]{
-    border-radius: 10px;
-    text-align: center;
-    width: 80%;
-    margin-left: 10%;
-    margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
+    background: #0d6efd;
 }
 
 #inner-title
@@ -289,17 +121,6 @@ input[type="text"],input[type="password"]{
     color: #000000;
   }
 
-#passwordLabel
-{
-    display: inline-block;
-    font-size: 0.8em;
-    width: 90%;
-    text-align: center;
-    margin-left: 5%;
-    margin-bottom: 2%;
-    font-family: Times New Roman, sans-serif;
-    color: #000000;
-}
 #loginResult{
     display: inline-block;
     font-size: 0.8em;
@@ -341,7 +162,7 @@ select{
     display: none;
 }
 
-#contactAddResult{
+#contactAddResult #contactEditResult{
     display: inline-block;
     font-size: 0.8em;
     width: 90%;
@@ -370,7 +191,7 @@ select{
 
 .styled-table th{
 	 padding: 12px 15px;
-	 background-color:#0a5071;
+	 background-color:#0d6efd;
 	 color: #FFF
 }
 .styled-table td {
@@ -396,11 +217,11 @@ select{
     color: #000;
 }
 
-/*
+
 {box-sizing: border-box;}
-*/
+
 /* Button used to open the contact form - fixed at the bottom of the page */
-/*
+
 .open-button {
   background-color: #555;
   color: white;
@@ -413,9 +234,9 @@ select{
   right: 28px;
   width: 280px;
 }
-*/
+
 /* The popup form - hidden by default */
-/*
+
 .form-popup {
   display: none;
   position: fixed;
@@ -424,17 +245,17 @@ select{
   border: 3px solid #f1f1f1;
   z-index: 9;
 }
-*/
+
 /* Add styles to the form container */
-/*
+
 .form-container {
   max-width: 300px;
   padding: 10px;
   background-color: white;
 }
-*/
+
 /* Full-width input fields */
-/*
+
 .form-container input[type=text], .form-container input[type=password] {
   width: 100%;
   padding: 15px;
@@ -442,18 +263,18 @@ select{
   border: none;
   background: #f1f1f1;
 }
-*/
+
 /* When the inputs get focus, do something */
-/*
+
 .form-container input[type=text]:focus, .form-container input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
-*/
+
 /* Set a style for the submit/login button */
-/*
+
 .form-container .btn {
-  background-color: #0a5071;
+  background-color: #0d6efd;
   color: white;
   padding: 16px 20px;
   border: none;
@@ -462,16 +283,15 @@ select{
   margin-bottom:10px;
   opacity: 0.8;
 }
-*/
+
 /* Add a red background color to the cancel button */
-/*
+
 .form-container .cancel {
-  background-color: #0a5071;
+  background-color: #0d6efd;
 }
-*/
+
 /* Add some hover effects to buttons */
-/*
+
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
-*/

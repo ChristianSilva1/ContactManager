@@ -266,30 +266,36 @@ function searchContact()
 
 function deleteContact(CID)
 {
-	readCookie();
-	var tmp = {contactID: CID};
-	var jsonPayload = JSON.stringify( tmp );
+	var result = confirm("Delete Contacto?");
+	if (!result) {
+	    return;
+	} else {
 
-	var url = urlBase + '/Delete.' + extension;
+		readCookie();
+		var tmp = {contactID: CID};
+		var jsonPayload = JSON.stringify( tmp );
 
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	try
-	{
-		xhr.onreadystatechange = function()
-	{
-		if (this.readyState == 4 && this.status == 200)
+		var url = urlBase + '/Delete.' + extension;
+
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", url, true);
+		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+		try
 		{
-			console.log("Deleted");
-			searchContact();
-		}
-	};
-	xhr.send(jsonPayload);
-}
-catch(err)
-{
-	document.getElementById("contactEditResult").innerHTML = "Could not delete";
+			xhr.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+				console.log("Deleted");
+				searchContact();
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("contactEditResult").innerHTML = "Could not delete";
+	}
 }
 
 }
@@ -302,6 +308,7 @@ function openForm(CID) {
 
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
+	document.getElementById("contactEditResult").innerHTML = "";
 }
 
 function setContact(CID)
@@ -321,11 +328,11 @@ function editContact()
 	var addEmail = document.getElementById("newContactEmail").value;
 	var addPhone = document.getElementById("newContactPhone").value;
 	console.log(userId);
-	document.getElementById("contactAddResult").innerHTML = "";
+	document.getElementById("contactEditResult").innerHTML = "";
 
 	if(addFirst === '' || addLast === '' || addEmail === '' || addPhone === '')
 	{
-		document.getElementById("contactAddResult").innerHTML = "Please fill all fields";
+		document.getElementById("contactEditResult").innerHTML = "Please fill all fields";
 		return;
 	}
 
@@ -344,7 +351,7 @@ function editContact()
 			if (this.readyState == 4 && this.status == 200)
 			{
 				console.log("EDITTED");
-				document.getElementById("contactAddResult").innerHTML = "Changes have been saved, redirecting to main page....";
+				document.getElementById("contactEditResult").innerHTML = "Changes have been saved, redirecting to main page....";
 			}
 			window.setTimeout(function(){
         // Move to a new location or you can do something else
@@ -356,6 +363,6 @@ function editContact()
 	}
 	catch(err)
 	{
-		document.getElementById("contactAddResult").innerHTML = err.message;
+		document.getElementById("contactEditResult").innerHTML = err.message;
 	}
 }
