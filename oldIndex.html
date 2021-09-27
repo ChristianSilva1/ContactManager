@@ -1,0 +1,29 @@
+<html lang="en"><head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Contact Manager</title>
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/code.js"></script>
+  <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+		<link href="https://fonts.googleapis.com/css2?family=Caveat&amp;display=swap" rel="stylesheet">
+
+<body>
+	<nav1>
+		<img src="images/logo.png" id="logo" alt="logo">
+	  <div class="icon"> Contact Manager</div>
+	</nav1>
+
+	<div id="loginDiv">
+		<span id="inner-title">PLEASE LOG IN</span>
+		<input type="text" id="loginName" placeholder="Username"><br>
+		<input type="password" id="loginPassword" placeholder="Password"><br>
+		<button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Enter </button>
+		<span id="loginResult"></span>
+		<span id="inner-title">NOT A REGISTERED USER?</span>
+		<button type="button" id="signUpButton" class="buttons" onclick="window.location.href='signup.html'">Sign up</button>
+	</div>
+</body></html>

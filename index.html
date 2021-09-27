@@ -2,28 +2,46 @@
 	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Contact Manager</title>
+  <title>Contactos Sign In</title>
 	<script type="text/javascript" src="js/md5.js"></script>
 	<script type="text/javascript" src="js/code.js"></script>
-  <link href="css/styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-		<link href="https://fonts.googleapis.com/css2?family=Caveat&amp;display=swap" rel="stylesheet">
+	<link href="css/signin.css" rel="stylesheet">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+		    <style>
+		      .bd-placeholder-img {
+		        font-size: 1.125rem;
+		        text-anchor: middle;
+		        -webkit-user-select: none;
+		        -moz-user-select: none;
+		        user-select: none;
+		      }
 
-<body>
-	<nav1>
-		<img src="images/logo.png" id="logo" alt="logo">
-	  <div class="icon"> Contact Manager</div>
-	</nav1>
-
-	<div id="loginDiv">
-		<span id="inner-title">PLEASE LOG IN</span>
-		<input type="text" id="loginName" placeholder="Username"><br>
-		<input type="password" id="loginPassword" placeholder="Password"><br>
-		<button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Enter </button>
-		<span id="loginResult"></span>
-		<span id="inner-title">NOT A REGISTERED USER?</span>
-		<button type="button" id="signUpButton" class="buttons" onclick="window.location.href='signup.html'">Sign up</button>
-	</div>
-</body></html>
+		      @media (min-width: 768px) {
+		        .bd-placeholder-img-lg {
+		          font-size: 3.5rem;
+		        }
+		      }
+		    </style>
+</head>
+<body class="text-center">
+	<main class="form-signin">
+	  <form>
+	    <img class="mb-4" src="images/logo.png" alt="" width="120" height="120">
+	    <h1 class="h2 mb-2 fw-normal">Welcome to Contactos</h1>
+			<br>
+			<h2 class="h3 mb-3 fw-normal">Please sign in</h2>
+	    <div class="form-floating">
+	      <input type="username" class="form-control" id="loginName" placeholder="Username">
+	      <label for="floatingInput">Username</label>
+	    </div>
+	    <div class="form-floating">
+	      <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+	      <label for="floatingPassword">Password</label>
+	    </div>
+	    <button class="w-100 btn btn-lg btn-primary" type="button" onclick="doLogin();">Sign in</button>
+      <span class="mt-5 mb-3 text-muted" id="loginResult"></span>
+      <p class="mt-5 mb-3 text-muted">Not a resgistered user?<p>
+      <button class="btn btn-primary btn-sm" type="button" onclick="window.location.href='signup.html'">Sign up</button>
+	    <p class="mt-5 mb-3 text-muted">&copy; 2021 Group15apps</p>
+	  </form>
+	</main>
