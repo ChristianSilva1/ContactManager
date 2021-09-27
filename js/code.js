@@ -14,6 +14,12 @@ function doLogin()
 
 	var login = document.getElementById("loginName").value;
 	var password = document.getElementById("loginPassword").value;
+
+	if(login === '' || password === '')
+	{
+		document.getElementById("loginResult").innerHTML = "Please enter a Login and Password";
+		return;
+	}
 //	var hash = md5( password );
 
 	document.getElementById("loginResult").innerHTML = "";
@@ -73,11 +79,16 @@ function doSignUp()
 	var password2 = document.getElementById("signUpPassword2").value;
 
 	document.getElementById("signUpResult").innerHTML = "";
+	if(firstName === '' || lastName === '' || userName === '' || password1 === '')
+	{
+		document.getElementById("signUpResult").innerHTML = "Please fill all fields";
+		return;
+	}
 
 
 	if (password1 !== password2)
 	{
-		document.getElementById("loginResult").innerHTML = "Passwords do not match!";
+		document.getElementById("signUpResult").innerHTML = "Passwords do not match!";
 		return;
 	}
 
@@ -198,7 +209,7 @@ function addContact()
 			window.setTimeout(function(){
         // Move to a new location or you can do something else
         window.location.href = "contacts.html";
-    }, 5000);
+    }, 3000);
 
 		};
 		xhr.send(jsonPayload);
@@ -233,8 +244,16 @@ function searchContact()
 			{
 				document.getElementById("contactSearchResult").innerHTML = "Contacts has been retrieved";
 				var jsonObject = JSON.parse( xhr.responseText );
-				for( var i=0; i<jsonObject.results.length; i++ )
+				console.log(typeof jsonObject.results);
+				if(typeof jsonObject.results === 'undefined'){
+					contactList += '<tr>';
+					contactList += '<td>No Record Found</td>'
+					contactList += '</tr>';
+				}
+				else
 				{
+					for( var i=0; i<jsonObject.results.length; i++ )
+					{
 						contactID = jsonObject.results[i].ID;
 						contactFirst = jsonObject.results[i].FirstName;
 						contactLast = jsonObject.results[i].LastName;
@@ -251,7 +270,8 @@ function searchContact()
 							contactList += '<td> <button type="button" id="deleteContactButton" class="buttons" onclick="deleteContact('+contactID+');"> Delete </button>'
 							contactList += '<button type="button" id="editContactButton" class="buttons" onclick="openForm('+contactID+');">Edit</button> </td>'
 							contactList += '</tr>';
-				}
+						}
+					}
 
 				document.getElementsByTagName("tbody")[0].innerHTML = contactList;
 			}
@@ -353,10 +373,9 @@ function editContact()
 				console.log("EDITTED");
 				document.getElementById("contactEditResult").innerHTML = "Changes have been saved, redirecting to main page....";
 			}
-			window.setTimeout(function(){
         // Move to a new location or you can do something else
         window.location.href = "contacts.html";
-    }, 5000);
+
 
 		};
 		xhr.send(jsonPayload);
