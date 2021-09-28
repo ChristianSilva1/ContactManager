@@ -268,7 +268,7 @@ function searchContact()
 							contactList += '<td>' + jsonObject.results[i].ID + '</td>';
 							contactList += '<td>' + jsonObject.results[i].FirstName + '</td>';
 							contactList += '<td>' + jsonObject.results[i].LastName + '</td>';
-							contactList += '<td>' + jsonObject.results[i].Email + '</td>';
+							contactList += '<td><a href="mailto:"+jsonObject.results[i].Email>' + jsonObject.results[i].Email + '</a></td>';
 							contactList += '<td>' + jsonObject.results[i].Phone + '</td>';
 							contactList += '<td> <button type="button" id="deleteContactButton" class="buttons" onclick="deleteContact('+contactID+');"><img id="smallButton" src="images/trash.png" alt="delete"></button>'
 							contactList += '<button type="button" id="editContactButton" class="buttons" onclick="openForm('+contactID+');"><img id="smallButton" src="images/edit.png" alt="edit"></button> </td>'
