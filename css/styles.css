@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0:
   box-sizing: border-box;
-  font-family: 'Roboto',sans-serif;
+  font-family: 'Roboto', Helvetica, sans-serif;
 }
 
 nav{
@@ -42,7 +42,7 @@ nav .icon{
   width: 500px;
   border-radius: 25px;
   width: 15%;
-  font-family: 'Roboto', 'sans-serif';
+  font-family: 'Roboto', Helvetica, sans-serif;
   cursor: pointer;
   }
 
@@ -57,7 +57,7 @@ nav .icon{
   border-color: #0d6efd;
   align-items: center;
   justify-content: center;
-  font-family: 'Roboto', 'sans-serif';
+  font-family: 'Roboto', Helvetica, sans-serif;
 }
 
 #smallButton {
@@ -87,7 +87,7 @@ nav1
     font-size: 40px;
     width: 100%;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', Helvetica, sans-serif;
     color: #000;
     display: flex;
     background: #0d6efd;
@@ -109,7 +109,7 @@ nav1 .icon{
     text-align: center;
     margin-left: 5%;
     margin-bottom: 2%;
-    font-family: Times New Roman, sans-serif;
+    font-family: 'Roboto', Helvetica, sans-serif;
     color: #FFF;
     background: #0a5071;
 }
@@ -122,7 +122,7 @@ nav1 .icon{
     text-align: center;
     margin-left: 5%;
     margin-bottom: 2%;
-    font-family: Times New Roman, sans-serif;
+    font-family: 'Roboto', Helvetica, sans-serif;
     color: #000000;
   }
 
@@ -133,7 +133,7 @@ nav1 .icon{
     text-align: center;
     margin-left: 5%;
     margin-bottom: 2%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', Helvetica, sans-serif;
     color: #95060a;
 }
 
@@ -144,7 +144,7 @@ nav1 .icon{
     text-align: center;
     margin-left: 5%;
     margin-bottom: 2%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', Helvetica, sans-serif;
     color: #95060a;
 }
 
@@ -160,7 +160,7 @@ select{
     margin-left: 35%;
     margin-top: 2%;
     font-size: 0.75em;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', Helvetica, sans-serif;
 }
 
 #contactSearchResult{
@@ -175,7 +175,7 @@ select{
     margin-left: 5%;
     margin-top: 2%;
     margin-bottom: 1%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', Helvetica, sans-serif;
     color: #95060a;
 }
 
