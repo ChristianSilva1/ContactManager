@@ -38,6 +38,7 @@ nav .icon{
 
 #searchContactButton{
   font-size: 30px;
+  border-radius: 5px;
   width: 500px;
   width: 10%;
   font-family: 'Roboto', Helvetica, sans-serif;
@@ -47,7 +48,8 @@ nav .icon{
 #addContactButton{
 	font-size: 30px;
   width: 200px;
-  margin-left: 33%;
+  border-radius: 5px;
+  margin-left: 32%;
   margin-bottom: 5%;
   color: #fff;
   background-color: #0d6efd;
