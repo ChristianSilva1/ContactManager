@@ -46,7 +46,7 @@ function doLogin()
 				userId = localStorage.getItem('userid');
 				if( userId < 1 )
 				{
-					document.getElementById("loginResult").innerHTML = "Username/Password combination incorrect";
+					document.getElementById("loginResult").innerHTML = "Username or password is incorrect";
 					return;
 				}
 
