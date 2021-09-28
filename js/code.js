@@ -19,7 +19,7 @@ function doLogin()
 
 	if(login === '' || password === '')
 	{
-		document.getElementById("loginResult").innerHTML = "Please enter a Login and Password";
+		document.getElementById("loginResult").innerHTML = "Please enter your username and password";
 		return;
 	}
 //	var hash = md5( password );
