@@ -1,0 +1,75 @@
+<html>
+<head>
+	<title>Contactos Tablero</title>
+  <script type="text/javascript" src="js/code.js"></script>
+    <link href="css/styles.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', function()
+			{
+				readCookie();
+			}, false);
+			window.onload = function()
+			{
+	  		searchContact(0);
+			};
+		</script>
+</head>
+<body>
+		<nav1>
+			<img src="images/logo.png" id="logo" alt="logo">
+			<div class="icon"> Contacts </div>
+			<button type="button" id="logoutButton"class="buttons" onclick="doLogout();">
+				<img id="logoutImg"src="images/logout.png" alt="log out">
+			</button>
+		</nav1>
+	<div id="accessUIDiv">
+
+		<input type="text" id="searchText" placeholder="Buscar Contacts">
+		<button type="button" id="searchContactButton" class="buttons" onclick="searchContact();"> Buscar </button>
+	  <button type="button" id="addContactButton" class="buttons" onclick="window.location.href='addSpanish.html'">Agregar Contact</button>
+		<span id="contactSearchResult"></span>
+		<table class="styled-table">
+			 <thead>
+				 <tr>
+					 <th scope="col">ID</th>
+					 <th scope="col">Nombre</th>
+					 <th scope="col">Apellido</th>
+					 <th scope="col">Correo Electronico</th>
+					 <th scope="col">Numero de Telefono</th>
+					 <th scope="col">Acciones</th>
+				 </tr>
+			 </thead>
+			 <tbody>
+
+			 </tbody>
+		 </table>
+
+
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1 class="h3 mb-3 fw-normal">Editar Contact</h1>
+
+    <label><b>Nombre</b></label>
+    <input type="text" placeholder="Nuevo Nombre" id="newContactFirst" required>
+
+    <label><b>Apellido</b></label>
+    <input type="text" placeholder="Nuevo apellido" id="newContactLast" required>
+
+		<label for="email"><b>Correo electronico</b></label>
+    <input type="text" placeholder="Nuevo correo electronico" id="newContactEmail" required>
+
+		<label for="email"><b># de telefono</b></label>
+    <input type="text" placeholder="Nuevo # de telefono" id="newContactPhone" required>
+
+    <button type="button" class="btn" onclick="editContact();">Editar</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Cerrar</button>
+		<span class="mt-5 mb-3 text-muted" id="contactEditResult"></span>
+  </form>
+</div>
+
+	</div>
+<p class="mt-5 mb-3 text-muted" style="text-align:center">&copy; 2021 Group15apps <a href="contacts.html">English</a></p>
+</body>
+</html>

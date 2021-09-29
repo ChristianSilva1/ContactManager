@@ -2,7 +2,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Add Contact</title>
+  <title>Nuevo Contact</title>
   <script type="text/javascript" src="js/code.js"></script>
     <link href="css/add.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -26,34 +26,34 @@
 	<main class="form-add">
 	  <form>
 	    <img class="mb-4" src="images/logo.png" alt="" width="100" height="100">
-	    <h1 class="h3 mb-3 fw-normal">Add a New Contacto</h1>
+	    <h1 class="h3 mb-3 fw-normal">Agregar Nuevo Contact</h1>
       <div class="form-floating">
-	      <input type="text" class="form-control" id="newContactFirst" placeholder="First name">
-	      <label for="floatingInput">First name</label>
+	      <input type="text" class="form-control" id="newContactFirst" placeholder="Nombre">
+	      <label for="floatingInput">Nombre</label>
 	    </div>
       <br>
       <div class="form-floating">
-        <input type="text" class="form-control" id="newContactLast" placeholder="Last name">
-        <label for="floatingInput">Last name</label>
+        <input type="text" class="form-control" id="newContactLast" placeholder="Apellido">
+        <label for="floatingInput">Apellido</label>
       </div>
       <br>
 	    <div class="form-floating">
-	      <input type="text" class="form-control" id="newContactEmail" placeholder="Email">
-	      <label for="floatingInput">Email</label>
+	      <input type="text" class="form-control" id="newContactEmail" placeholder="Correo electrónico">
+	      <label for="floatingInput">Correo electrónico</label>
 	    </div>
       <br>
 	    <div class="form-floating">
-	      <input type="text" class="form-control" id="newContactPhone" placeholder="Phone number">
-	      <label for="floatingInput">Phone number</label>
+	      <input type="text" class="form-control" id="newContactPhone" placeholder="Número de teléfono">
+	      <label for="floatingInput">Número de teléfono</label>
 	    </div>
       <br>
       <span class="mt-5 mb-3 text-muted" id="contactAddResult"></span>
       <br>
       <br>
-      <button type="button" id="addContactButton" class="w-100 btn btn-lg btn-primary" onclick="addContact(1);"> Add Contacto </button><br>
+      <button type="button" id="addContactButton" class="w-100 btn btn-lg btn-primary" onclick="addContact(0);"> Agregar Contact </button><br>
       <br>
-      <button type="button" id="cancelButton" class="btn btn-primary btn-sm" onclick="window.location.href='contacts.html'"> Cancel </button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2021 Group15apps <a href="addSpanish.html">Spanish</a></p>
+      <button type="button" id="cancelButton" class="btn btn-primary btn-sm" onclick="window.location.href='contacts.html'"> Cancelar </button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2021 Group15apps <a href="add.html">English</a></p>
 	  </form>
 	</main>
   </body></html>

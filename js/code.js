@@ -7,7 +7,7 @@ var lastName = "";
 var contactID = 0;
 var displayUsername = "";
 
-function doLogin()
+function doLogin(language)
 {
 	userId = 0;
 	firstName = "";
@@ -19,8 +19,14 @@ function doLogin()
 
 	if(login === '' || password === '')
 	{
-		document.getElementById("loginResult").innerHTML = "Please enter your username and password";
-		return;
+		if (language) {
+			document.getElementById("loginResult").innerHTML = "Please enter your username and password";
+			return;
+		} else {
+			document.getElementById("loginResult").innerHTML = "Por favor ingrese un nombre de usuario y contraseña";
+			return;
+		}
+
 	}
 //	var hash = md5( password );
 
@@ -46,8 +52,14 @@ function doLogin()
 				userId = localStorage.getItem('userid');
 				if( userId < 1 )
 				{
-					document.getElementById("loginResult").innerHTML = "Username or password is incorrect";
-					return;
+					if (language) {
+						document.getElementById("loginResult").innerHTML = "Username or password is incorrect";
+						return;
+					} else {
+						document.getElementById("loginResult").innerHTML = "Nombre de usuario o contraseña incorrecto";
+						return;
+					}
+
 				}
 
 				firstName = jsonObject.firstName;
@@ -55,8 +67,14 @@ function doLogin()
 				getuserID = userId;
 				saveCookie();
 
-				window.location.href = "contacts.html";
-				console.log(userId);
+				if (language) {
+					window.location.href = "contacts.html";
+					console.log(userId);
+				} else {
+					window.location.href = "contactsSpanish.html";
+					console.log(userId);
+				}
+
 			}
 		};
 		xhr.send(jsonPayload);
@@ -68,7 +86,7 @@ function doLogin()
 
 }
 
-function doSignUp()
+function doSignUp(language)
 {
 	//Set this back to 0
 	userId = 0;
@@ -83,15 +101,25 @@ function doSignUp()
 	document.getElementById("signUpResult").innerHTML = "";
 	if(firstName === '' || lastName === '' || userName === '' || password1 === '')
 	{
-		document.getElementById("signUpResult").innerHTML = "Please fill all fields";
-		return;
-	}
+		if (language) {
+			document.getElementById("signUpResult").innerHTML = "Please fill all fields";
+			return;
+		} else {
+			document.getElementById("signUpResult").innerHTML = "Por favor llenar todos los campos";
+			return;
+		}
 
+	}
 
 	if (password1 !== password2)
 	{
-		document.getElementById("signUpResult").innerHTML = "Passwords do not match!";
-		return;
+		if (language) {
+			document.getElementById("signUpResult").innerHTML = "Passwords do not match!";
+			return;
+		} else {
+			document.getElementById("signUpResult").innerHTML = "Las contraseñas no coinciden!";
+			return;
+		}
 	}
 
 	var password = password1;
@@ -118,7 +146,11 @@ function doSignUp()
 
 					saveCookie();
 					//Back to index
-					window.location.href = "http://group15apps.xyz";
+					if (language) {
+						window.location.href = "http://group15apps.xyz";
+					} else {
+						window.location.href = "http://group15apps.xyz/indexSpanish.html";
+					}
 				}
 			};
 
@@ -176,7 +208,7 @@ function doLogout()
 	window.location.href = "index.html";
 }
 
-function addContact()
+function addContact(language)
 {
 	userId = localStorage.getItem('userid')
 	var addFirst = document.getElementById("newContactFirst").value;
@@ -188,8 +220,14 @@ function addContact()
 
 	if(addFirst === '' || addLast === '' || addEmail === '' || addPhone === '')
 	{
-		document.getElementById("contactAddResult").innerHTML = "Please fill all fields";
-		return;
+		if (language) {
+			document.getElementById("contactAddResult").innerHTML = "Please fill all fields";
+			return;
+		} else {
+			document.getElementById("contactAddResult").innerHTML = "Por favor llenar todos los campos";
+			return;
+		}
+
 	}
 
 	var tmp = { id: userId, addFirstName: addFirst, addLastName: addLast, addEmail: addEmail,	addPhoneNumber: addPhone};
@@ -206,11 +244,21 @@ function addContact()
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-				document.getElementById("contactAddResult").innerHTML = "Contact has been added, redirecting to main page....";
+				if (language) {
+					document.getElementById("contactAddResult").innerHTML = "Contact has been added, redirecting to main page....";
+				} else {
+					document.getElementById("contactAddResult").innerHTML = "Contacto ha sido agregado, redireccionando página principal....";
+				}
+
 			}
 			window.setTimeout(function(){
         // Move to a new location or you can do something else
-        window.location.href = "contacts.html";
+				if (language) {
+					window.location.href = "contacts.html";
+				} else {
+					window.location.href = "contactsSpanish.html";
+				}
+
     }, 3000);
 
 		};
@@ -223,11 +271,10 @@ function addContact()
 
 }
 //Modify this
-function searchContact()
+function searchContact(language)
 {
 	var srch = document.getElementById("searchText").value;
 	document.getElementById("contactSearchResult").innerHTML = "";
-	document.getElementById("contactSearchResult").innerHTML = displayUsername;
 
 	var contactList = "";
 
@@ -249,9 +296,16 @@ function searchContact()
 				var jsonObject = JSON.parse( xhr.responseText );
 				console.log(typeof jsonObject.results);
 				if(typeof jsonObject.results === 'undefined'){
-					contactList += '<tr>';
-					contactList += '<td>No Record Found</td>'
-					contactList += '</tr>';
+					if (language) {
+						contactList += '<tr>';
+						contactList += '<td>No Record Found</td>'
+						contactList += '</tr>';
+					} else {
+						contactList += '<tr>';
+						contactList += '<td>Records no Encontrados</td>'
+						contactList += '</tr>';
+					}
+
 				}
 				else
 				{
